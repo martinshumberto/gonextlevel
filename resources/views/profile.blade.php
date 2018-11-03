@@ -4,14 +4,14 @@
     <section class="container">
         <section class="row">
             <section class="col-md-12">
-                <form method="POST" action="{{ route('profile.store') }}">
+                <form method="PUT" action="{{ route('profile.update', ['user' => Auth::user()->id]) }}">
                     @csrf
 
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required>
+                            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ $profile->name }}" required>
 
                             @if ($errors->has('name'))
                                 <span class="invalid-feedback" role="alert">
@@ -22,10 +22,10 @@
                     </div>
 
                     <div class="form-group row">
-                        <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+                        <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('cpf') }}</label>
 
                         <div class="col-md-6">
-                            <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ old('cpf') }}" required>
+                            <input id="cpf" type="text" class="form-control{{ $errors->has('cpf') ? ' is-invalid' : '' }}" name="cpf" value="{{ $profile->cpf }}" disabled required>
 
                             @if ($errors->has('cpf'))
                                 <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
                         <label for="cell-phone" class="col-md-4 col-form-label text-md-right">{{ __('cell phone') }}</label>
 
                         <div class="col-md-6">
-                            <input id="cell-phone" type="text" class="form-control{{ $errors->has('cell_phone') ? ' is-invalid' : '' }}" name="cell_phone" value="{{ old('cell_phone') }}" required>
+                            <input id="cell-phone" type="text" class="form-control{{ $errors->has('cell_phone') ? ' is-invalid' : '' }}" name="cell_phone" value="{{ $profile->cell_phone }}" required>
 
                             @if ($errors->has('cell_phone'))
                                 <span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
                         <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('phone') }}</label>
 
                         <div class="col-md-6">
-                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone') }}" required>
+                            <input id="phone" type="text" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ $profile->phone }}" required>
 
                             @if ($errors->has('phone'))
                                 <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
                         <label for="birth-date" class="col-md-4 col-form-label text-md-right">{{ __('Birth date') }}</label>
 
                         <div class="col-md-6">
-                            <input id="birth-date" type="text" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ old('birth_date') }}" required>
+                            <input id="birth-date" type="text" class="form-control{{ $errors->has('birth_date') ? ' is-invalid' : '' }}" name="birth_date" value="{{ $profile->birth_date }}" disabled required>
 
                             @if ($errors->has('birth_date'))
                                 <span class="invalid-feedback" role="alert">

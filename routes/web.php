@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/info', 'UserInformationController')->name('user-info');
+Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([
+    'profile' => 'user'
+]);
