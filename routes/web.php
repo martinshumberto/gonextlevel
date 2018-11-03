@@ -27,11 +27,13 @@ Route::get('auth/user', function() {
     return \App\User::find($user->id);
 })->name('auth.user');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/user/info', 'UserInformationController')->name('user-info');
-Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([
-    'profile' => 'user'
-]);
-Route::resource('/address', 'AddressController')->only(['store', 'update'])->parameters([
-    'address' => 'user'
-]);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/user/info', 'UserInformationController')->name('user-info');
+    Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([
+        'profile' => 'user'
+    ]);
+    Route::resource('/address', 'AddressController')->only(['store', 'update'])->parameters([
+        'address' => 'user'
+    ]);
+});
