@@ -22,3 +22,6 @@ Route::get('/user/info', 'UserInformationController')->name('user-info');
 Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([
     'profile' => 'user'
 ]);
+Route::resource('/address', 'AddressController')->only(['store', 'update'])->parameters([
+    'address' => 'user'
+]);
