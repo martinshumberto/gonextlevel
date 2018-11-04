@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Address;
 use App\Models\Profile;
+use App\Models\Prospect;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -28,5 +29,10 @@ class User extends Authenticatable
     public function address()
     {
         return $this->hasOne(Address::class);
+    }
+
+    public function prospects()
+    {
+        return $this->hasMany(Prospect::class);
     }
 }

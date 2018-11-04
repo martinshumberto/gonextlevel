@@ -36,4 +36,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/address', 'AddressController')->only(['store', 'update'])->parameters([
         'address' => 'user'
     ]);
+    Route::resource('/prospect', 'ProspectController')
+        ->only(['index', 'store', 'update', 'destroy']);
 });
