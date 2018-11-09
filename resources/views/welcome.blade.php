@@ -1,1 +1,4 @@
-<section>Well Come</section>
+<section>
+    <a href="{{route('login')}}">Login</a>
+    <a href="{{route('register')}}">Register</a>
+</section>
