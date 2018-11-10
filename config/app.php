@@ -148,6 +148,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * Laroute package service
+         */
+        Lord\Laroute\LarouteServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
