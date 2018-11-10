@@ -17,6 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('auth/user', function() {
+    $user = \Illuminate\Support\Facades\Auth::user();
+
+    if (!$user) {
+        return json_encode((object)[]);
+    }
+
+    return \App\User::find($user->id);
+})->name('auth.user');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/user/info', 'UserInformationController')->name('user-info');
 Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([

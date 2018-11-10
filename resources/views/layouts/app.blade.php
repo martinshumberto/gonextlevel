@@ -28,7 +28,7 @@
         {{-- <div class="layout-w"> --}}
             <!-- Topbar content -->
             <section>
-                <app-topbar />
+                <app-topbar/>
             </section>
 
             <div class="content-w">

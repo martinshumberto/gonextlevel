@@ -26,7 +26,6 @@ class ProfileController extends Controller
         $birth_date = new Carbon($request->input('birth_date'));
 
         Auth::user()->profile()->create([
-            'name' => $request->input('name'),
             'cpf' => $request->input('cpf'),
             'cell_phone' => $request->input('cell_phone'),
             'phone' => $request->input('phone'),

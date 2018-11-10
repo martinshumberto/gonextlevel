@@ -14303,8 +14303,9 @@ module.exports = __webpack_require__(64);
 
 /***/ }),
 /* 15 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -14354,6 +14355,11 @@ try {
  */
 
 window.axios = __webpack_require__(20);
+
+window.axios.get(laroute.route('auth.user')).then(function (_ref) {
+  var data = _ref.data;
+  return window.authUser = data;
+});
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -47895,7 +47901,7 @@ exports = module.exports = __webpack_require__(4)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47908,6 +47914,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__top_items__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__top_items___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__top_items__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logged_user__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logged_user___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__logged_user__);
 //
 //
 //
@@ -47930,133 +47938,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        TopItems: __WEBPACK_IMPORTED_MODULE_0__top_items___default.a
+        TopItems: __WEBPACK_IMPORTED_MODULE_0__top_items___default.a,
+        LoggedUser: __WEBPACK_IMPORTED_MODULE_1__logged_user___default.a
     },
 
     computed: {
+        toHome: function toHome() {
+            return laroute.route('home');
+        },
         topItems: function topItems() {
             return [{
                 head: {
@@ -48344,9 +48239,15 @@ var render = function() {
         "menu-w color-scheme-light color-style-default menu-position-top menu-layout-compact sub-menu-style-over sub-menu-color-bright selected-menu-color-bright menu-activated-on-hover menu-has-selected-link"
     },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "logo-w" }, [
+        _c("a", { staticClass: "logo", attrs: { href: _vm.toHome } }, [
+          _c("div", { staticClass: "logo-element" }),
+          _vm._v(" "),
+          _c("div", { staticClass: "logo-label" }, [_vm._v("Go Next Level")])
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("logged-user"),
       _vm._v(" "),
       _c("h1", { staticClass: "menu-page-header" }, [_vm._v("Menu")]),
       _vm._v(" "),
@@ -48354,7 +48255,7 @@ var render = function() {
         "ul",
         { staticClass: "main-menu" },
         [
-          _vm._m(2),
+          _vm._m(0),
           _vm._v(" "),
           _vm._l(_vm.topItems, function(item, index) {
             return _c("top-items", {
@@ -48365,101 +48266,11 @@ var render = function() {
         ],
         2
       )
-    ]
+    ],
+    1
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "logo-w" }, [
-      _c("a", { staticClass: "logo", attrs: { href: "#" } }, [
-        _c("div", { staticClass: "logo-element" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "logo-label" }, [_vm._v("Go Next Level")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "logged-user-w avatar-inline" }, [
-      _c("div", { staticClass: "logged-user-i" }, [
-        _c("div", { staticClass: "avatar-w" }, [
-          _c("img", { attrs: { alt: "", src: "img/avatar3.jpg" } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "logged-user-info-w" }, [
-          _c("div", { staticClass: "logged-user-name" }, [_vm._v("Gabriel")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "logged-user-role" }, [_vm._v("Admin")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "logged-user-toggler-arrow" }, [
-          _c("div", { staticClass: "os-icon os-icon-chevron-down" })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "logged-user-menu color-style-bright" }, [
-          _c("div", { staticClass: "logged-user-avatar-info" }, [
-            _c("div", { staticClass: "avatar-w" }, [
-              _c("img", { attrs: { alt: "", src: "img/avatar3.jpg" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "logged-user-info-w" }, [
-              _c("div", { staticClass: "logged-user-name" }, [
-                _vm._v("Gabriel")
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "logged-user-role" }, [_vm._v("Admin")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "bg-icon" }, [
-            _c("i", { staticClass: "icon-feather-user" })
-          ]),
-          _vm._v(" "),
-          _c("ul", [
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "os-icon os-icon-ui-46" }),
-                _c("span", [_vm._v("Meus dados")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "os-icon os-icon-user-male-circle2" }),
-                _c("span", [_vm._v("Perfil")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "os-icon os-icon-feather-award" }),
-                _c("span", [_vm._v("Assinatura")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "os-icon os-icon-others-43" }),
-                _c("span", [_vm._v("Notificações")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("i", { staticClass: "os-icon os-icon-signs-11" }),
-                _c("span", [_vm._v("Sair")])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -48602,6 +48413,235 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 65 */,
+/* 66 */,
+/* 67 */,
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(69)
+/* template */
+var __vue_template__ = __webpack_require__(70)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/topbar/logged-user.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-81152b60", Component.options)
+  } else {
+    hotAPI.reload("data-v-81152b60", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        logout: function logout() {
+            return laroute.route('logout');
+        }
+    }
+});
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "logged-user-w avatar-inline" }, [
+    _c("div", { staticClass: "logged-user-i" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "logged-user-info-w" }, [
+        _c("div", { staticClass: "logged-user-name" }, [
+          _vm._v(_vm._s(_vm.authUser.name))
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "logged-user-role" }, [_vm._v("Role")])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "logged-user-menu color-style-bright" }, [
+        _c("div", { staticClass: "logged-user-avatar-info" }, [
+          _vm._m(1),
+          _vm._v(" "),
+          _c("div", { staticClass: "logged-user-info-w" }, [
+            _c("div", { staticClass: "logged-user-name" }, [
+              _vm._v(_vm._s(_vm.authUser.name))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "logged-user-role" }, [_vm._v("Admin")])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _c("ul", [
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._m(6),
+          _vm._v(" "),
+          _c("li", [
+            _c("a", { attrs: { href: _vm.logout } }, [
+              _c("i", { staticClass: "os-icon os-icon-signs-11" }),
+              _c("span", [_vm._v("Sair")])
+            ])
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "avatar-w" }, [
+      _c("img", { attrs: { alt: "", src: "img/avatar3.jpg" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "avatar-w" }, [
+      _c("img", { attrs: { alt: "", src: "img/avatar3.jpg" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "bg-icon" }, [
+      _c("i", { staticClass: "icon-feather-user" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "os-icon os-icon-ui-46" }),
+        _c("span", [_vm._v("Meus dados")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "os-icon os-icon-user-male-circle2" }),
+        _c("span", [_vm._v("Perfil")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "os-icon os-icon-feather-award" }),
+        _c("span", [_vm._v("Assinatura")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "os-icon os-icon-others-43" }),
+        _c("span", [_vm._v("Notificações")])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-81152b60", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

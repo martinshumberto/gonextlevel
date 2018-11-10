@@ -22,6 +22,8 @@ try {
 
 window.axios = require('axios');
 
+window.axios.get(laroute.route('auth.user')).then(({data}) => window.authUser = data);
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
