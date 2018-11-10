@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/laroute.js') }}"></script>
     <script src="{{ asset('libs/fontawesome/fontawesome/all.js') }}" defer></script>
 
     <!-- Fonts -->
