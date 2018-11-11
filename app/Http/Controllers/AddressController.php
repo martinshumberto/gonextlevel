@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AddressController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function store(AddressCreateRequest $request)
     {
         Auth::user()->address()->create($request->all());

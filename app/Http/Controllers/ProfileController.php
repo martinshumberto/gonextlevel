@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $profile = Auth::user()->profile;
@@ -32,7 +27,7 @@ class ProfileController extends Controller
             'birth_date' => $birth_date
         ]);
 
-        return redirect('/billing');
+        return redirect('/home');
     }
 
     public function update(Request $request, User $user)
