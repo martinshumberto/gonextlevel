@@ -16,6 +16,7 @@ class RegistationTest extends TestCase
         $this->withoutExceptionHandling();
 
         $data = [
+            'name' => 'Guest User',
             'email' => 'guestuser@mail.com',
             'password' => 'secret',
             'password_confirmation' => 'secret'
