@@ -28,14 +28,14 @@ Route::get('auth/user', function() {
 })->name('auth.user');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/user/info', 'UserInformationController')->name('user-info');
-    Route::resource('/profile', 'ProfileController')->only(['index', 'store', 'update'])->parameters([
+    Route::get('/home', 'Web\HomeController@index')->name('home');
+    Route::get('/user/info', 'Web\UserInformationController')->name('user-info');
+    Route::resource('/profile', 'Web\ProfileController')->only(['index', 'store', 'update'])->parameters([
         'profile' => 'user'
     ]);
-    Route::resource('/address', 'AddressController')->only(['store', 'update'])->parameters([
+    Route::resource('/address', 'Web\AddressController')->only(['store', 'update'])->parameters([
         'address' => 'user'
     ]);
-    Route::resource('/prospect', 'ProspectController')
+    Route::resource('/prospect', 'Web\ProspectController')
         ->only(['index', 'store', 'update', 'destroy']);
 });

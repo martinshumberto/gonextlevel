@@ -24,7 +24,7 @@ class ProfileTest extends TestCase
             'birth_date' => '13-03-1998',
         ];
 
-        $uri = action('ProfileController@store');
+        $uri = action('Web\ProfileController@store');
 
         $this->actingAs($user)->postJson($uri, $data)->assertRedirect('/home');
 
@@ -48,7 +48,7 @@ class ProfileTest extends TestCase
             'cell_phone' => '(55) 88888-8888',
         ];
 
-        $uri = action('ProfileController@update', ['user' => $user->id]);
+        $uri = action('Web\ProfileController@update', ['user' => $user->id]);
 
         $this->actingAs($user)->putJson($uri, $data)->assertSuccessful();
 
@@ -76,7 +76,7 @@ class ProfileTest extends TestCase
             'birth_date' => '13-03-2000'
         ];
 
-        $uri = action('ProfileController@update', ['user' => $user->id]);
+        $uri = action('Web\ProfileController@update', ['user' => $user->id]);
 
         $this->actingAs($user)->putJson($uri, $data)->assertSuccessful();
 
