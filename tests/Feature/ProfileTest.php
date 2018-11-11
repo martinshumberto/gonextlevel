@@ -26,7 +26,7 @@ class ProfileTest extends TestCase
 
         $uri = action('ProfileController@store');
 
-        $this->actingAs($user)->postJson($uri, $data)->assertRedirect('/billing');
+        $this->actingAs($user)->postJson($uri, $data)->assertRedirect('/home');
 
         $this->assertDatabaseHas('profiles', [
             'user_id' => $user->id

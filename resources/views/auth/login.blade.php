@@ -28,8 +28,10 @@
                 @endif
                 <div class="pre-icon os-icon os-icon-fingerprint"></div>
             </div>
-            <div class="buttons-w">
+
+            <div class="d-flex justify-content-around align-items-center mt-4">
                 <button type="submit" class="btn btn-primary">Login</button>
+                <a href="{{route('register')}}">Não é cadastrado?</a>
             </div>
         </form>
     </div>

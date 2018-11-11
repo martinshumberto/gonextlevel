@@ -27,7 +27,7 @@ class ProfileController extends Controller
             'birth_date' => $birth_date
         ]);
 
-        return redirect('/billing');
+        return redirect('/home');
     }
 
     public function update(Request $request, User $user)
