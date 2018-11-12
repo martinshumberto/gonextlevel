@@ -28,7 +28,10 @@
         {{-- <div class="layout-w"> --}}
             <!-- Topbar content -->
             <section>
-                <app-topbar/>
+                <form id="logout-form" method="POST" action="{{route('logout')}}">
+                    @csrf
+                </form>
+                <app-topbar :user="{{json_encode(Auth::user())}}"/>
             </section>
 
             <div class="content-w">
