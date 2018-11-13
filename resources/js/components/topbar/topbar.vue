@@ -7,7 +7,7 @@
             </a>
         </div>
 
-        <logged-user />
+        <logged-user :user="user"/>
         <h1 class="menu-page-header">Menu</h1>
         <ul class="main-menu">
             <li class="sub-header"><span>Navegação</span></li>
@@ -29,6 +29,8 @@
             TopItems,
             LoggedUser,
         },
+
+        props: ['user'],
 
         computed: {
             toHome() {

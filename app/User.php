@@ -21,6 +21,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $with = ['profile', 'address', 'prospects'];
+
     public function profile()
     {
         return $this->hasOne(Profile::class);

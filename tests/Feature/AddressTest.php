@@ -25,7 +25,7 @@ class AddressTest extends TestCase
             'state' => 'Utah'
         ];
 
-        $uri = action('AddressController@store');
+        $uri = action('Web\AddressController@store');
         $this->actingAs($user)->postJson($uri, $data)->assertSuccessful();
 
         $this->assertDatabaseHas('addresses', [
@@ -55,7 +55,7 @@ class AddressTest extends TestCase
             'number' => '991',
         ];
 
-        $uri = action('AddressController@update', ['user' => $user->id]);
+        $uri = action('Web\AddressController@update', ['user' => $user->id]);
 
         $this->actingAs($user)->putJson($uri, $data)->assertSuccessful();
 
