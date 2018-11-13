@@ -8,7 +8,7 @@ class ProspectDeleteAndUpdateRequest extends FormRequest
 {
     public function authorize()
     {
-        return $this->user()->id === $this->prospect->user_id;
+        return $this->user()->id == $this->prospect->user_id;
     }
 
     public function rules()
