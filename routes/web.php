@@ -38,4 +38,5 @@ Route::middleware(['auth'])->group(function () {
     ]);
     Route::resource('/prospect', 'Web\ProspectController')
         ->only(['index', 'store', 'update', 'destroy']);
+    Route::post('/profile/upload', 'Web\ProfileAvatarUploadController')->name('profile.upload');
 });

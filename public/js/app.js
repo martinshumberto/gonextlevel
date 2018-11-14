@@ -48334,7 +48334,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "logged-user-w avatar-inline" }, [
     _c("div", { staticClass: "logged-user-i" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "avatar-w" }, [
+        _c("img", {
+          attrs: { alt: "", src: _vm.user.profile.avatar || "img/avatar3.jpg" }
+        })
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "logged-user-info-w" }, [
         _c("div", { staticClass: "logged-user-name" }, [
@@ -48346,7 +48350,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "logged-user-menu color-style-bright" }, [
         _c("div", { staticClass: "logged-user-avatar-info" }, [
-          _vm._m(1),
+          _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "logged-user-info-w" }, [
             _c("div", { staticClass: "logged-user-name" }, [
@@ -48357,32 +48361,24 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(2),
+        _vm._m(1),
         _vm._v(" "),
         _c("ul", [
+          _vm._m(2),
+          _vm._v(" "),
           _vm._m(3),
           _vm._v(" "),
           _vm._m(4),
           _vm._v(" "),
           _vm._m(5),
           _vm._v(" "),
-          _vm._m(6),
-          _vm._v(" "),
-          _c("li", { on: { click: _vm.logoutUser } }, [_vm._m(7)])
+          _c("li", { on: { click: _vm.logoutUser } }, [_vm._m(6)])
         ])
       ])
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "avatar-w" }, [
-      _c("img", { attrs: { alt: "", src: "img/avatar3.jpg" } })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
