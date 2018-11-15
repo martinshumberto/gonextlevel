@@ -2,11 +2,12 @@
 
 namespace Tests\Feature;
 
-use App\Models\Profile;
 use App\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
+use App\Models\Profile;
+use App\Models\SocialMedia;
+use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProfileTest extends TestCase
 {
@@ -84,6 +85,35 @@ class ProfileTest extends TestCase
             'user_id' => $user->id,
             'cpf' => '999.999.999-99',
             'birth_date' => '13-03-1998',
+        ]);
+    }
+
+    /** @test */
+    public function it_should_be_able_to_auth_user_add_your_social_medias_to_profile()
+    {
+        $this->withoutExceptionHandling();
+        $user = factory(User::class)->create();
+        $user->profile()->create([
+            'cpf' => '999.999.999-99',
+            'cell_phone' => '(55) 99999-9999',
+            'phone' => '(55) 9999-9999',
+            'birth_date' => '13-03-1998',
+        ]);
+
+        $data = [
+            'link' => 'https://www.facebook.com',
+            'type' => 'facebook',
+        ];
+
+        $uri = action('Web\SocialMediaController');
+
+        $this->actingAs($user);
+        $this->postJson($uri, $data)->assertSuccessful();
+
+        $this->assertDatabaseHas('social_medias', [
+            'profile_id' => 1,
+            'link' => 'https://www.facebook.com',
+            'type' => 'facebook',
         ]);
     }
 }

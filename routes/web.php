@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('auth/user', function() {
+Route::get('auth/user', function () {
     $user = \Illuminate\Support\Facades\Auth::user();
 
     if (!$user) {
@@ -39,4 +39,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/prospect', 'Web\ProspectController')
         ->only(['index', 'store', 'update', 'destroy']);
     Route::post('/profile/upload', 'Web\ProfileAvatarUploadController')->name('profile.upload');
+    Route::post('profile/social-media', 'Web\SocialMediaController')->name('profile.social-media');
 });
