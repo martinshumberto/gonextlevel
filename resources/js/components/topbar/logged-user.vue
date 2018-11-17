@@ -1,7 +1,7 @@
 <template>
     <div class="logged-user-w avatar-inline">
         <div class="logged-user-i">
-            <div class="avatar-w"><img alt="" :src="user.profile.avatar || 'img/avatar3.jpg'"></div>
+            <div class="avatar-w"><img alt="" :src="user.profile && user.profile.avatar || 'img/avatar3.jpg'"></div>
             <div class="logged-user-info-w">
                 <div class="logged-user-name">{{ user.name }}</div>
                 <div class="logged-user-role">Role</div>

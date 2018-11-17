@@ -32,8 +32,13 @@
             }
         },
 
+        computed: {
+            hasSubMenu() {
+                return !!this.subMenu;
+            }
+        },
+
         props: {
-            hasSubMenu: { type: Boolean, default: false },
             selected: { type: Boolean, default: false },
             headMenu: { type: Object, default: () => {} },
             subMenu: { type: Object, default: () => {} },
