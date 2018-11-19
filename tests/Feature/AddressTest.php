@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class AddressTest extends TestCase
@@ -18,7 +17,7 @@ class AddressTest extends TestCase
 
         $data = [
             'cep' => '75380-000',
-            'address' => '17 winchester 012',
+            'street' => '17 winchester 012',
             'number' => '181',
             'district' => 'Someplace',
             'city' => 'Murray',
@@ -42,7 +41,7 @@ class AddressTest extends TestCase
 
         $user->address()->create([
             'cep' => '75380-000',
-            'address' => '17 winchester 012',
+            'street' => '17 winchester 012',
             'number' => '181',
             'district' => 'Someplace',
             'city' => 'Murray',
@@ -51,7 +50,7 @@ class AddressTest extends TestCase
 
         $data = [
             'cep' => '75380-999',
-            'address' => '19 winchester 015',
+            'street' => '19 winchester 015',
             'number' => '991',
         ];
 
@@ -62,7 +61,7 @@ class AddressTest extends TestCase
         $this->assertDatabaseHas('addresses', [
             'user_id' => $user->id,
             'cep' => '75380-999',
-            'address' => '19 winchester 015',
+            'street' => '19 winchester 015',
             'number' => '991',
         ]);
     }

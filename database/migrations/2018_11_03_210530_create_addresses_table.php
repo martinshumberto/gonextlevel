@@ -17,8 +17,9 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id')->nullable();
             $table->string('cep');
-            $table->string('address');
-            $table->string('number');
+            $table->string('street');
+            $table->string('complement')->nullable();
+            $table->string('number')->nullable();
             $table->string('district');
             $table->string('city');
             $table->string('state');

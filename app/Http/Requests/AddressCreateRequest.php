@@ -25,7 +25,7 @@ class AddressCreateRequest extends FormRequest
     {
         return [
             'cep' => 'required|string',
-            'address' => 'required|string',
+            'street' => 'required|string',
             'district' => 'required|string',
             'city' => 'required|string',
             'state' => 'required|string'
