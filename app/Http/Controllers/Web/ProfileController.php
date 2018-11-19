@@ -13,7 +13,8 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $profile = Auth::user()->profile;
+        $profile = auth()->user()->profile;
+
         return view('profile', compact('profile'));
     }
 
@@ -21,7 +22,7 @@ class ProfileController extends Controller
     {
         $birth_date = new Carbon($request->input('birth_date'));
 
-        Auth::user()->profile()->create([
+        auth()->user()->profile()->create([
             'cpf' => $request->input('cpf'),
             'cell_phone' => $request->input('cell_phone'),
             'phone' => $request->input('phone'),
