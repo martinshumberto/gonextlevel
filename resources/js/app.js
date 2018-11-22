@@ -18,6 +18,12 @@ window.Vue = require('vue');
  */
 require('./components/bootstrap');
 
+import VueClickOutside from 'vue-click-outside';
+import { VueMaskDirective } from 'v-mask';
+
+Vue.directive('click-outside', VueClickOutside);
+Vue.directive('mask', VueMaskDirective);
+
 const app = new Vue({
     el: '#app',
 });
