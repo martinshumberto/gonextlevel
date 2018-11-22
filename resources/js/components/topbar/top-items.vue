@@ -1,6 +1,6 @@
 <template>
     <li @mouseover="active = true" @mouseout="active = false" :class="{'has-sub-menu': hasSubMenu, 'active': active, 'selected': selected}">
-        <a>
+        <a :href="headMenu.href || '#'">
             <div class="icon-w">
                 <slot name="head-icon">
                     <div :class="headMenu.icon || 'icon-feather-trending-up'"></div>

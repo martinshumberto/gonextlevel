@@ -47679,7 +47679,11 @@ var content = __webpack_require__(46);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
 var update = __webpack_require__(4)("5cc5b607", content, false, {});
+=======
+var update = __webpack_require__(5)("47b2d33e", content, false, {});
+>>>>>>> Change in visual
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -47877,7 +47881,11 @@ var content = __webpack_require__(53);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
 var update = __webpack_require__(4)("2a799400", content, false, {});
+=======
+var update = __webpack_require__(5)("532e4d60", content, false, {});
+>>>>>>> Change in visual
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -47901,7 +47909,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -47916,6 +47924,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__top_items___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__top_items__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logged_user__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__logged_user___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__logged_user__);
+//
+//
 //
 //
 //
@@ -47958,27 +47968,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return [{
                 head: {
                     title: 'Dashboard',
-                    icon: 'fas fa-chart-pie'
+                    icon: 'fas fa-chart-pie',
+                    href: '#'
                 }
             }, {
                 head: {
                     title: 'Prospectos',
-                    icon: 'fas fa-user-tag'
+                    icon: 'fas fa-user-tag',
+                    href: '#'
+                },
+                submenu: {
+                    title: 'Sub Prospectos',
+                    items: [{
+                        title: 'Teste 1',
+                        href: laroute.route('user-info'),
+                        badge: 'badge badge-warning'
+                    }]
                 }
             }, {
                 head: {
                     title: 'Treinamentos',
-                    icon: 'fas fa-dumbbell'
+                    icon: 'fas fa-dumbbell',
+                    href: '#'
                 }
             }, {
                 head: {
                     title: 'Aplicativos',
-                    icon: 'fas fa-mobile-alt'
+                    icon: 'fas fa-mobile-alt',
+                    href: '#'
                 }
             }, {
                 head: {
                     title: 'Configurações',
-                    icon: 'fas fa-cog'
+                    icon: 'fas fa-cog',
+                    href: '#'
                 }
             }];
         }
@@ -48047,7 +48070,11 @@ var content = __webpack_require__(57);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
+<<<<<<< HEAD
 var update = __webpack_require__(4)("eef0bf5c", content, false, {});
+=======
+var update = __webpack_require__(5)("6246661c", content, false, {});
+>>>>>>> Change in visual
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -48156,7 +48183,7 @@ var render = function() {
       }
     },
     [
-      _c("a", [
+      _c("a", { attrs: { href: _vm.headMenu.href || "#" } }, [
         _c(
           "div",
           { staticClass: "icon-w" },
@@ -48505,7 +48532,7 @@ var render = function() {
           _vm._l(_vm.topItems, function(item, index) {
             return _c("top-items", {
               key: index,
-              attrs: { headMenu: item.head }
+              attrs: { headMenu: item.head, subMenu: item.submenu }
             })
           })
         ],
