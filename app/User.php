@@ -21,16 +21,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    protected $with = ['profile', 'address', 'prospects'];
+    protected $with = ['profile', 'prospects'];
 
     public function profile()
     {
         return $this->hasOne(Profile::class);
-    }
-
-    public function address()
-    {
-        return $this->hasOne(Address::class);
     }
 
     public function prospects()

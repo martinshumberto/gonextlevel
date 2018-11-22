@@ -15,7 +15,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('profile_id')->nullable();
             $table->string('cep');
             $table->string('street');
             $table->string('complement')->nullable();
@@ -24,7 +24,7 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('state');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('set null');
             $table->timestamps();
         });
     }
