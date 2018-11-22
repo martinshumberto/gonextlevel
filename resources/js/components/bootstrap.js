@@ -1,3 +1,4 @@
 require('./commons');
-require('./topbar');
-require('./profile');
+
+Vue.component('profile-user', require('./profile/profile-user'));
+Vue.component('app-topbar', require('./topbar/topbar'));

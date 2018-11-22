@@ -11364,12 +11364,6 @@ body {
     padding: 1rem;
     .logged-user-i:hover {
       cursor: pointer;
-      .logged-user-menu {
-        visibility: visible;
-        opacity: 1;
-        -webkit-transform: translateY(0px);
-        transform: translateY(0px);
-      }
     }
     + .main-menu {
       padding-top: 0px;
@@ -11385,8 +11379,7 @@ body {
     overflow: hidden;
     padding: 1rem;
     z-index: 999;
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
     -webkit-transform: translateY(20px);
     transform: translateY(20px);
     -webkit-transition: all 0.3s ease;
@@ -12716,7 +12709,7 @@ body {
       .logged-user-menu {
         left: auto;
         right: 0;
-        top: -10px;
+        top: 40px;
         width: auto;
         min-width: 230px;
         ul {
@@ -12732,10 +12725,6 @@ body {
             padding: 5px 5px 5px 20px;
           }
         }
-      }
-      &:hover .logged-user-menu {
-        -webkit-transform: translate(0, 0);
-        transform: translate(0, 0);
       }
     }
   }
@@ -22261,12 +22250,6 @@ body.rentals-wrapper {
       display: inline-block;
       &:hover {
         cursor: pointer;
-        .logged-user-menu {
-          visibility: visible;
-          opacity: 1;
-          -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-        }
       }
     }
     .logged-user-menu {
@@ -22279,8 +22262,7 @@ body.rentals-wrapper {
       overflow: hidden;
       padding: 1rem;
       z-index: 999;
-      visibility: hidden;
-      opacity: 0;
+      visibility: visible;
       -webkit-transform: translateY(20px);
       transform: translateY(20px);
       -webkit-transition: all 0.3s ease;
