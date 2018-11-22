@@ -1,2 +1,0 @@
-require('./commons');
-require('./topbar');

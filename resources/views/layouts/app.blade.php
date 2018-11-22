@@ -25,7 +25,6 @@
 <body class="menu-position-top full-screen with-content-panel">
 
     <div id="app" class="all-wrapper with-side-panel solid-bg-all">
-        {{-- <div class="layout-w"> --}}
             <!-- Topbar content -->
             <section>
                 <form id="logout-form" method="POST" action="{{route('logout')}}">
@@ -43,7 +42,6 @@
                 <!-- main content -->
                 @yield('content')
             </div>
-        {{-- </div> --}}
 
         <div class="display-type"></div>
     </div>

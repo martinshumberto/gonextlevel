@@ -6,6 +6,9 @@
 
 require('./bootstrap');
 
+import { Form } from './utils';
+window.Form = Form;
+
 window.Vue = require('vue');
 
 /**
@@ -13,7 +16,13 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-require('./components');
+require('./components/bootstrap');
+
+import VueClickOutside from 'vue-click-outside';
+import { VueMaskDirective } from 'v-mask';
+
+Vue.directive('click-outside', VueClickOutside);
+Vue.directive('mask', VueMaskDirective);
 
 const app = new Vue({
     el: '#app',

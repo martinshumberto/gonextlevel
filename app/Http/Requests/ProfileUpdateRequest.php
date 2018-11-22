@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileCreateRequest extends FormRequest
+class ProfileUpdateRequest extends FormRequest
 {
     public function authorize()
     {
@@ -14,9 +14,13 @@ class ProfileCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'cpf' => 'required|string',
-            'birth_date' => 'required|date',
+            //
         ];
+    }
+
+    public function profile()
+    {
+        return $this->profile;
     }
 
     public function address()
